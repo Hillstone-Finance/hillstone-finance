@@ -25,18 +25,9 @@ abstract contract BlackList is Ownable, ERC20 {
         emit RemovedBlackList(_addr);
     }
 
-    function retrieveBlackFunds (address _blackListedUser) public onlyOwner {
-        require(isBlackListed[_blackListedUser]);
-        uint dirtyFunds = balanceOf(_blackListedUser);
-        _transfer(_blackListedUser, owner(), dirtyFunds);
-        emit RetrievedBlackFunds(_blackListedUser, dirtyFunds);
-    }
-
     event AddedBlackList(address _user);
 
     event RemovedBlackList(address _user);
-
-    event RetrievedBlackFunds(address _blackListedUser, uint _balance);
 
 }
 
