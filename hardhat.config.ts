@@ -49,7 +49,7 @@ const config: HardhatUserConfig = {
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts,
-      gasPrice: 120 * 1000000000,
+      gasPrice: "auto",
       chainId: 1,
     },
     localhost: {
@@ -118,7 +118,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.8.0",
+        version: "0.8.6",
         settings: {
           optimizer: {
             enabled: true,

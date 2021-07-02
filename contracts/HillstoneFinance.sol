@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity 0.8.6;
 
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -34,7 +34,7 @@ abstract contract BlackList is Ownable, ERC20 {
 contract HillstoneFinance is ERC20, BlackList {
 
     using SafeMath for uint256;
-    uint256 constant private _initial_supply = 100000000000000000000000000;
+    uint256 constant private _initial_supply = 10**26;
 
     constructor() ERC20("Hillstone.Finance", "HSF") {
         _mint(msg.sender, _initial_supply);
