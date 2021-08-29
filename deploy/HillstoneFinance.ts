@@ -21,6 +21,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     });
     */
 
+    /*
     // OPERATION 2021-08-19 ~ 2023-04-19
     await deploy('TokenVesting', {
         from: deployer,
@@ -38,6 +39,20 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         from: deployer,
         log: true,
         args: [HSF_ADDR, HILLSTONE_TEAM, HILLSTONE_TEAM_FUND, 1692370800, 1692370800, 1744988400]
+    });
+    */
+
+    /*
+    await deploy('TetherToken', {
+        from: deployer,
+        log: true,
+        args: [BigNumber.from("30000000000000000"), "Tether USD", "USDT", 6]
+    });
+    */
+
+    await deploy('InvestorV1Factory', {
+        from: deployer,
+        log: true
     });
 };
 export default func;
